@@ -1,0 +1,60 @@
+marks=[]
+n= int(input("Enter the number of students:"))
+for i in range (0,n):
+    enter= int(input("Enter your marks(if absent score=-1):"))
+    marks.append(enter)
+print(marks[:])
+
+#average score of class
+def avg():
+    sum=0
+    for i in range (0,n):
+        if marks[i] != -1:
+
+            sum = sum + marks[i];
+            print(sum)
+            avg = sum/ n
+    print (sum/n)
+    print("The average score of the class is: ",avg)
+
+# highest and lowest score
+def hlscore():
+    high=marks[0]
+    low=marks[0]
+
+    for i in range(0,n):
+        if marks[i]!= -1:
+            if (marks[i]>=high):
+                high= marks[i]
+            elif(marks[i]<=low):
+                low= marks[i]
+    print("The highest score is = ",high)
+    print("The lowest score = ",low)
+
+
+
+# count number of students who were absent for the test
+def count():
+    count=0
+    for i in range (0,n):
+        if marks[i]==-1:
+            count=count+1
+    print("The number of students who were absent for the test= ",count)
+
+#marks with highest frequency
+def maxFrequency():
+    count1=0
+    count2=0
+    for j in marks:
+        if (marks.index(j)==count1):
+            if marks.count(j)>count2:
+                count2=marks.count(j)
+                markk=j
+        count1=count1+1
+    print("Highest number of frequency is of mark",markk, " and have frequency of ",count2)
+    
+
+avg()
+hlscore()
+count()
+maxFrequency()
